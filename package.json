@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "npm run set-theme && next build",
+    "start": "next start",
+    "postinstall": "npm run build",
+    "set-theme": "node ./helpers/set-theme.js"
   },
   "dependencies": {
     "next": "10.0.3",

@@ -4,7 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-
+.current_theme
+.idea
+.vscode
 # testing
 /coverage
 
