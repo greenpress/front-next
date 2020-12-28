@@ -1,11 +1,16 @@
 import Layout from '@/.current_theme/Layout';
-import { useRouter } from 'next/router';
+import { getPageProps } from '@/helpers/get-page-props';
 
-export default function Tag() {
-	const { query } = useRouter();
+export default function Tag({ params }) {
 	return (
 		<Layout>
-			This is tag page: {JSON.stringify(query)}
+			This is tag page: {JSON.stringify(params)}
 		</Layout>
 	)
+}
+
+export const getServerSideProps = async (props) => {
+	return {
+		props: getPageProps(props)
+	}
 }

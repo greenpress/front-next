@@ -1,11 +1,16 @@
 import Layout from '@/.current_theme/Layout';
-import { useRouter } from 'next/router';
+import { getPageProps } from '@/helpers/get-page-props';
 
-export default function Search() {
-	const { query } = useRouter();
+export default function Search({ params }) {
 	return (
 		<Layout>
-			This is search page: {JSON.stringify(query)}
+			This is search page: {JSON.stringify(params)}
 		</Layout>
 	)
+}
+
+export const getServerSideProps = async (props) => {
+	return {
+		props: getPageProps(props)
+	}
 }
